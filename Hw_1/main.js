@@ -42,9 +42,13 @@ const products = [
 ];
 
 const itemsHtml = document.querySelector(".items");
+const filterButton = document.querySelector(".filter_btn");
+const resetButton = document.querySelector(".reset");
 
-products.forEach((item) => {
-  itemsHtml.innerHTML += ` <div class="card">
+function render(array) {
+  itemsHtml.innerHTML = "";
+  array.forEach((item) => {
+    itemsHtml.innerHTML += ` <div class="card">
   <div class="brand_category">
         <span class="category">${item.category}</span>
         <p class="brand">${item.brand}</p>
@@ -57,4 +61,17 @@ products.forEach((item) => {
     
          <button class="add_btn" name='${item.id}'>add to cart</button>
       </div>`;
+  });
+}
+render(products);
+
+filterButton.addEventListener("click", () => {
+  const filteredArray = products.filter((product) => {
+    return product.price < 200;
+  });
+  render(filteredArray);
+});
+
+resetButton.addEventListener("click", () => {
+  render(products);
 });
