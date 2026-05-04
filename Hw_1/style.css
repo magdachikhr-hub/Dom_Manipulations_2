@@ -3,6 +3,29 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+header {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  padding-left: 50px;
+  gap: 40px;
+  button.filter_btn,
+  button.reset {
+    width: 200px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+  }
+  button.filter_btn {
+    background-color: blue;
+  }
+  button.reset {
+    background-color: red;
+  }
+}
+
 div.items {
   display: flex;
   flex-wrap: wrap;
