@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+div.items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  div.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 350px;
+    height: 400px;
+    img.product_img {
+      width: 225px;
+      height: 225px;
+      margin-top: 14px;
+    }
+    div.name_price {
+      display: flex;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      gap: 50px;
+    }
+    p.name {
+      margin-bottom: 10px;
+    }
+    button.add_btn {
+      width: 250px;
+      height: 33px;
+      border-radius: 10px;
+      border: none;
+      background-color: green;
+      color: white;
+      font-size: 15px;
+    }
+    span.category {
+      display: inline-block;
+    }
+    div.brand_category {
+      display: flex;
+      gap: 170px;
+    }
+  }
+}
