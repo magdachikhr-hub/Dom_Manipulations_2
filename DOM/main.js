@@ -8,7 +8,14 @@ const user = {
   userName: "athena",
   age: 23,
   isActive: true,
+  themes: {
+    darkMode: "black",
+    lightMode: "white",
+  },
+  right: ["get", "delete"],
 };
+
+user.themes.darkMode = "grey";
 
 console.log(user.age);
 
@@ -57,4 +64,8 @@ const string = "text";
 const new1 = string.toUpperCase();
 console.log(new1);
 
+//
+const arr2 = [1, 2, 3, 4, 5];
 
+const mergeArr = [...colors, ...arr2];
+console.log(mergeArr);
