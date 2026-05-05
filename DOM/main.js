@@ -69,3 +69,31 @@ const arr2 = [1, 2, 3, 4, 5];
 
 const mergeArr = [...colors, ...arr2];
 console.log(mergeArr);
+
+//
+
+const webUser = {
+  name: "magda",
+  surname: "chi",
+  image: "./hi.png",
+  age: 20,
+  isActive: true,
+};
+
+const profileImg = document.getElementById("profile_img");
+const userName = document.querySelector(".userName");
+const age = document.getElementById("age");
+const isActive = document.getElementById("is_active");
+
+profileImg.setAttribute("src", webUser.image);
+
+console.log(profileImg);
+console.log(webUser.image);
+
+age.textContent = webUser.age;
+userName.textContent = webUser.name + " " + webUser.surname;
+// isActive.textContent = webUser.isActive;
+webUser.isActive
+  ? (isActive.textContent = "online")
+  : (isActive.textContent = "offline");
+// userName.textContent = `name is ${webUser.name} surname is ${webUser.surname}`
