@@ -2,6 +2,9 @@
 
 const form = document.getElementById("register_form");
 
+//
+const fileInput = document.getElementById("file");
+//
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
@@ -14,7 +17,28 @@ form.addEventListener("submit", (e) => {
     password: data.get("password"),
     gender: data.get("gender"),
     terms: data.get("terms"),
+    file: data.get("file_upload"),
   };
+
+  //   const reader = new FileReader(user.file);
+  //   reader.onload = (e) => {
+  //     console.log(e.target.result);
+  //   };
+});
+
+fileInput.addEventListener("change", (event) => {
+  const file = event.target.files[0];
+  const reader = new FileReader();
+
+  reader.onload = (e) => {
+    console.log(e.target.result);
+    let img = document.createElement("img");
+
+    img.setAttribute("src", e.target.result);
+    document.body.append(img);
+  };
+  //   reader.readAsText(file);
+  reader.readAsDataURL(file);
 });
 
 //formdata connects to the name attribute
