@@ -6,22 +6,25 @@
 //const usernamevalue = username.value - can also be used like this
 
 const form = document.getElementById("register_form");
+const error_message = document.getElementById("error_message");
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  const username = document.getElementById("username").value;
+  error_message.textContent = "";
+
+  const username = document.getElementById("userName").value;
   const lastname = document.getElementById("lastname").value;
 
   if (username.length < 2) {
-    error_message.textcontent = "username is too short";
+    return errorHandler("username is too short");
   }
 
   if (lastname.length < 4) {
-    error_message.textcontent = "lastname is too short";
+    return errorHandler("lastname is too short");
   }
 });
 
 function errorHandler(errorText) {
-  error_message.textcontent = errorText;
+  error_message.textContent = errorText;
 }
