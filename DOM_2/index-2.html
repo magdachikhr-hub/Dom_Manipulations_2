@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="./script-2.js" defer></script>
+  </head>
+  <body>
+    <form id="register_form">
+      <div>
+        <label for="userName">სახელი:</label>
+        <input type="text" id="userName" placeholder="John" name=" userName" />
+      </div>
+      <div>
+        <label for="lastname">გვარი:</label>
+        <input type="text" id="lastname" placeholder="Doe" name="lastname" />
+      </div>
+      <div>
+        <label for="email">ემაილი:</label>
+        <input type="email" id="email" placeholder="John@Doe" name="email" />
+      </div>
+      <div>
+        <label for="password">პაროლი:</label>
+        <input
+          type="password"
+          id="password"
+          placeholder="****"
+          name="password"
+        />
+      </div>
+
+      <div>
+        <input type="radio" id="gender1" name="gender" value="male" />
+        <label for="gender1">Male</label>
+      </div>
+      <div>
+        <input type="radio" id="gender2" name="gender" value="female" />
+        <label for="gender2">Female</label>
+      </div>
+
+      <div>
+        <input type="checkbox" name="terms" id="terms" />
+        <label for="terms">do you agree with our terms?</label>
+      </div>
+
+      <div>
+        <button type="submit">submit</button>
+        <button type="reset">reset</button>
+      </div>
+
+      <span id="error_message"></span>
+    </form>
+  </body>
+</html>
