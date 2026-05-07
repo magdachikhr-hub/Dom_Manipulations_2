@@ -13,16 +13,42 @@ form.addEventListener("submit", (e) => {
 
   error_message.textContent = "";
 
-  const username = document.getElementById("userName").value;
-  const lastname = document.getElementById("lastname").value;
+  const username = document.getElementById("userName").value.trim();
+  const lastname = document.getElementById("lastname").value.trim();
+  const password = document.getElementById("password").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const gender = document.querySelector("input[name='gender']:checked");
+  const terms = document.getElementById("terms").checked;
 
-  if (username.length < 2) {
-    return errorHandler("username is too short");
+  if (username.length < 2 || username.length > 20) {
+    return errorHandler("username is not valid");
   }
 
-  if (lastname.length < 4) {
-    return errorHandler("lastname is too short");
+  if (lastname.length < 4 || lastname.length > 30) {
+    return errorHandler("lastname is not valid");
   }
+  if (password.length < 8) {
+    return errorHandler("password is too short");
+  }
+  if (email.length < 8 || email.length > 30) {
+    return errorHandler("email is not valid");
+  }
+  if (!gender) {
+    return errorHandler("please select your gender");
+  }
+  if (!terms) {
+    return errorHandler("please read our terms");
+  }
+
+  const user = {
+    name: username,
+    lastname: lastname,
+    mail: email,
+    password: password,
+    gender: gender.value,
+    terms: terms,
+  };
+  console.log(user);
 });
 
 function errorHandler(errorText) {
